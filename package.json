@@ -1,0 +1,10 @@
+{
+  "name": "todo_by_react",
+  "version": "0.0.1",
+  "description": "simple todo based on react",
+  "main": "index.js",
+  "repository": "https://github.com/lazysheep666/todo-by-react",
+  "author": "Haolan Yang",
+  "license": "MIT",
+  "private": false
+}
