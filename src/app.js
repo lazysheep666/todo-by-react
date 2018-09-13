@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import ToDoApp from './components/ToDoApp.js'
 
 ReactDOM.render(
-  <div>123</div>,
+  <ToDoApp/>,
   document.getElementById('app')
 )

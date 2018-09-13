@@ -18,15 +18,9 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "babel-eslint": "^7.2.3",
     "babel-polyfill": "^6.3.14",
     "babel-runtime": "^6.23.0",
-    "react": "^15.5.3",
-    "react-dom": "^15.5.3",
-    "react-hot-loader": "^3.0.0-beta.6",
-    "react-redux": "^4.4.0",
-    "redux": "^3.3.1",
-    "redux-logger": "^2.5.2",
-    "babel-eslint": "^7.2.3",
     "eslint": "^4.7",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-html": "^4.0.5",
@@ -34,7 +28,13 @@
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "eslint-plugin-react": "^7.7.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "eslint-plugin-standard": "^3.0.1",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-redux": "^4.4.0",
+    "redux": "^3.3.1",
+    "redux-logger": "^2.5.2"
   },
   "scripts": {
     "start": "webpack-dev-server --hot --inline --colors --content-base ./build",
