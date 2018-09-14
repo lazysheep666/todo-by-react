@@ -6,7 +6,10 @@
 
 ## Progress
 - [x] basic structure
-- [ ] basic component
+- [x] add todo
+- [x] delete todo
+- [ ] complete todo
+- [ ] fliter todos
 - [ ] using redux
 
 ---
