@@ -28,11 +28,14 @@ class ToDoApp extends Component {
   }
 
   toggleTodoStatus(index) {
-    let newTodos = this.state.todos
-    newTodos[index].isCompleted = !newTodos[index].isCompleted
-    this.setState({
-      todos: newTodos
-    })
+    this.setState(preState => ({
+      todos: preState.todos.map((todo, i) => {
+        if (i === index) {
+          return {...todo, isCompleted: !todo.isCompleted}
+        }
+        return todo
+      })
+    }))
   }
 
   deleteTodo(index) {
