@@ -8,7 +8,7 @@
 - [x] basic structure
 - [x] add todo
 - [x] delete todo
-- [ ] complete todo
+- [x] toggle todo
 - [ ] fliter todos
 - [ ] using redux
 

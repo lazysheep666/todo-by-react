@@ -21,7 +21,7 @@ class AddToDo extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleAddTodo}>
+      <form onSubmit={this.handleAddTodo} className="add-todo">
         <input type="text" placeholder="Enter ToDo" ref={this.toDoName}/>
       </form>
     )

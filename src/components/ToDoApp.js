@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import AddTodo from './AddToDo.js'
 import TodoList from './TodoList.js'
-// import Footer from './Footer.js'
+import Footer from './Footer.js'
 class ToDoApp extends Component {
   constructor() {
     super()
@@ -10,7 +10,7 @@ class ToDoApp extends Component {
       filter: 'all'
     }
     this.addTodo = this.addTodo.bind(this)
-    this.completeTodo = this.completeTodo.bind(this)
+    this.toggleTodoStatus = this.toggleTodoStatus.bind(this)
     this.deleteTodo = this.deleteTodo.bind(this)
   }
   componentDidMount() {
@@ -27,9 +27,9 @@ class ToDoApp extends Component {
     })
   }
 
-  completeTodo(index) {
+  toggleTodoStatus(index) {
     let newTodos = this.state.todos
-    newTodos[index].isCompleted = true
+    newTodos[index].isCompleted = !newTodos[index].isCompleted
     this.setState({
       todos: newTodos
     })
@@ -43,11 +43,12 @@ class ToDoApp extends Component {
   render() {
     return (
       <div id="container">
-        <h1>
+        <h1 id="app-title">
           ToDo APP
         </h1>
         <AddTodo onAddTodo={this.addTodo}/>
-        <TodoList todos={this.state.todos} onCompleteTodo={this.completeTodo} onDeleteTodo={this.deleteTodo}/>
+        <TodoList todos={this.state.todos} onToggleTodo={this.toggleTodoStatus} onDeleteTodo={this.deleteTodo}/>
+        <Footer/>
       </div>
     )
   }
