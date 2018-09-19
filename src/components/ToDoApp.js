@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import AddTodo from './AddToDo.js'
+import Filter from './filter.js'
 import TodoList from './TodoList.js'
 import Footer from './Footer.js'
 class ToDoApp extends Component {
@@ -7,11 +8,13 @@ class ToDoApp extends Component {
     super()
     this.state = {
       todos: [],
-      filter: 'all'
+      filter: 'All'
     }
     this.addTodo = this.addTodo.bind(this)
     this.toggleTodoStatus = this.toggleTodoStatus.bind(this)
     this.deleteTodo = this.deleteTodo.bind(this)
+    this.deleteAll = this.deleteAll.bind(this)
+    this.changeFilter = this.changeFilter.bind(this)
   }
   componentDidMount() {
     this.setState({
@@ -43,6 +46,19 @@ class ToDoApp extends Component {
       todos: this.state.todos.filter((todo, i) => !(i === index))
     })
   }
+
+  deleteAll() {
+    this.setState({
+      todos: []
+    })
+  }
+
+  changeFilter(newFilter) {
+    this.setState({
+      filter: newFilter
+    })
+  }
+
   render() {
     return (
       <div id="container">
@@ -50,8 +66,12 @@ class ToDoApp extends Component {
           ToDo APP
         </h1>
         <AddTodo onAddTodo={this.addTodo}/>
-        <TodoList todos={this.state.todos} onToggleTodo={this.toggleTodoStatus} onDeleteTodo={this.deleteTodo}/>
-        <Footer/>
+        <Filter curFilter={this.state.filter} onChangeFilter={this.changeFilter}/>
+        <TodoList curFilter={this.state.filter}
+          todos={this.state.todos}
+          onToggleTodo={this.toggleTodoStatus}
+          onDeleteTodo={this.deleteTodo}/>
+        <Footer onDeleteAll={this.deleteAll}/>
       </div>
     )
   }

@@ -9,7 +9,7 @@
 - [x] add todo
 - [x] delete todo
 - [x] toggle todo
-- [ ] fliter todos
+- [x] filter todos
 - [ ] using redux
 
 ---

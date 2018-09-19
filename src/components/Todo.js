@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 import PropTypes from 'prop-types'
-
-class Todo extends Component {
+import cn from 'classnames'
+class Todo extends PureComponent {
   constructor(props) {
     super(props)
     this.handleDelete = this.handleDelete.bind(this)
@@ -17,9 +17,10 @@ class Todo extends Component {
   }
 
   render() {
+    const className = cn('todo-name', {'completed': this.props.todo.isCompleted})
     return (
       <li className="todo">
-        <span className={this.props.todo.isCompleted ? 'todo-name completed' : 'todo-name'}
+        <span className={className}
           onClick={this.handleToggle}>
           {this.props.todo.name}
         </span>

@@ -1,23 +1,28 @@
 import React, {Component} from 'react'
-
+import PropTypes from 'prop-types'
 class Footer extends Component {
-  constructor(props) {
-    super(props)
+  static propTypes = {
+    onDeleteAll: PropTypes.func
   }
 
+  constructor(props) {
+    super(props)
+    this.handleDeleteAll = this.handleDeleteAll.bind(this)
+  }
+
+  shouldComponentUpdate() {
+    return false
+  }
+
+  handleDeleteAll() {
+    this.props.onDeleteAll()
+  }
   render() {
     return (
       <div className="footer">
-        <div className="fliter">
-          <div>All</div>
-          <div>Completed</div>
-          <div>Active</div>
-        </div>
-        <div>
-          <button>
+        <button onClick={this.handleDeleteAll}>
             Delete all
-          </button>
-        </div>
+        </button>
       </div>
     )
   }
