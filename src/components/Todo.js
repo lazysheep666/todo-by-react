@@ -22,7 +22,7 @@ class Todo extends PureComponent {
       <li className="todo">
         <span className={className}
           onClick={this.handleToggle}>
-          {this.props.todo.name}
+          {this.props.todo.text}
         </span>
         <span className="todo-delete" onClick={this.handleDelete}>X</span>
       </li>

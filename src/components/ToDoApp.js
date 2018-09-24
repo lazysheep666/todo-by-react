@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
-import AddTodo from './AddToDo.js'
+import AddTodoContainer from '../containers/AddTodoContainer'
+import TodoListContainer from '../containers/TodoListContainer'
 import Filter from './filter.js'
-import TodoList from './TodoList.js'
-import Footer from './Footer.js'
+// import TodoList from './TodoList.js'
+// import Footer from './Footer.js'
 class ToDoApp extends Component {
   constructor() {
     super()
@@ -10,54 +11,25 @@ class ToDoApp extends Component {
       todos: [],
       filter: 'All'
     }
-    this.addTodo = this.addTodo.bind(this)
-    this.toggleTodoStatus = this.toggleTodoStatus.bind(this)
-    this.deleteTodo = this.deleteTodo.bind(this)
-    this.deleteAll = this.deleteAll.bind(this)
-    this.changeFilter = this.changeFilter.bind(this)
+
+    // this.deleteAll = this.deleteAll.bind(this)
+    // this.changeFilter = this.changeFilter.bind(this)
   }
   componentDidMount() {
-    this.setState({
-      todos: [
-        {name: 'Todo 1', isCompleted: true},
-        {name: 'Todo 2', isCompleted: false}
-      ]
-    })
-  }
-  addTodo(todo) {
-    this.setState({
-      todos: [...this.state.todos, todo]
-    })
+
   }
 
-  toggleTodoStatus(index) {
-    this.setState(preState => ({
-      todos: preState.todos.map((todo, i) => {
-        if (i === index) {
-          return {...todo, isCompleted: !todo.isCompleted}
-        }
-        return todo
-      })
-    }))
-  }
+  // deleteAll() {
+  //   this.setState({
+  //     todos: []
+  //   })
+  // }
 
-  deleteTodo(index) {
-    this.setState({
-      todos: this.state.todos.filter((todo, i) => !(i === index))
-    })
-  }
-
-  deleteAll() {
-    this.setState({
-      todos: []
-    })
-  }
-
-  changeFilter(newFilter) {
-    this.setState({
-      filter: newFilter
-    })
-  }
+  // changeFilter(newFilter) {
+  //   this.setState({
+  //     filter: newFilter
+  //   })
+  // }
 
   render() {
     return (
@@ -65,13 +37,16 @@ class ToDoApp extends Component {
         <h1 id="app-title">
           ToDo APP
         </h1>
-        <AddTodo onAddTodo={this.addTodo}/>
+        <AddTodoContainer/>
+        <Filter curFilter={this.state.filter} onChangeFilter={this.changeFilter}/>
+        <TodoListContainer/>
+        {/* <AddTodo onAddTodo={this.addTodo}/>
         <Filter curFilter={this.state.filter} onChangeFilter={this.changeFilter}/>
         <TodoList curFilter={this.state.filter}
           todos={this.state.todos}
           onToggleTodo={this.toggleTodoStatus}
           onDeleteTodo={this.deleteTodo}/>
-        <Footer onDeleteAll={this.deleteAll}/>
+        <Footer onDeleteAll={this.deleteAll}/> */}
       </div>
     )
   }

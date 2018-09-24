@@ -11,6 +11,6 @@
 - [x] toggle todo
 - [x] filter todos
 - [ ] using immutable.js
-- [ ] using redux
+- [x] using redux
 
 ---
