@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 class Footer extends Component {
   static propTypes = {
-    onDeleteAll: PropTypes.func
+    deleteAllTodo: PropTypes.func
   }
 
   constructor(props) {
@@ -15,7 +15,7 @@ class Footer extends Component {
   }
 
   handleDeleteAll() {
-    this.props.onDeleteAll()
+    this.props.deleteAllTodo()
   }
   render() {
     return (

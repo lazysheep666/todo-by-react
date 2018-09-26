@@ -4,28 +4,26 @@ import cn from 'classnames'
 
 class Filter extends PureComponent {
   static propTypes = {
-    curFilter: PropTypes.string.isRequired,
+    filterName: PropTypes.string.isRequired,
+    active: PropTypes.bool,
     onChangeFilter: PropTypes.func
   }
+
   constructor(props) {
     super(props)
-    this.handleChangeFilter = this.handleChangeFilter.bind(this)
+    this.handleChange = this.handleChange.bind(this)
   }
 
-  filters = ['All', 'Completed', 'Pending']
-  handleChangeFilter(newFilter) {
-    this.props.onChangeFilter(newFilter)
+  handleChange(curFiler) {
+    this.props.onChangeFilter(curFiler)
   }
+
   render() {
+    const className = cn('tab', {'active': this.props.active})
     return (
-      <ul className="tabs">
-        {this.filters.map((name) => {
-          const className = cn('tab', {'active': name === this.props.curFilter})
-          return (
-            <li className={className} key={name} onClick={this.handleChangeFilter.bind(null, name)}>{name}</li>
-          )
-        })}
-      </ul>
+      <li className={className} onClick={this.handleChange.bind(null, this.props.filterName)}>
+        {this.props.filterName}
+      </li>
     )
   }
 }

@@ -6,7 +6,11 @@ import indexReducer from './reducers/index'
 import ToDoApp from './components/ToDoApp.js'
 import './styles/index.styl'
 
-const store = createStore(indexReducer)
+const store = createStore(
+  indexReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 ReactDOM.render(
   <Provider store={store}>

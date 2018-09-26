@@ -10,6 +10,10 @@ export const deleteTodo = (id) => ({
   id
 })
 
+export const deleteAllTodo = () => ({
+  type: type.DELETE_ALL_TODO
+})
+
 export const toggleTodo = (id) => ({
   type: type.TOGGLE_TODO,
   id
