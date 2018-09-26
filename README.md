@@ -13,8 +13,6 @@
 - [ ] using immutable.js
 - [x] using redux
 
----
-
 ## Usage
 1. `git clone` https://github.com/lazysheep666/todo-by-react.git
 2. `cd` todo-by-react
@@ -23,6 +21,7 @@
 5. opening your browser with `http://localhost:7777`
 ## Case
 
-![image](https://github.com/lazysheep666/todo-by-react/gif/todo.gif)
+![image](https://github.com/lazysheep666/todo-by-react/blob/master/gif/todo.gif)
 
+---
 
